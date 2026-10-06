@@ -166,3 +166,13 @@ section[style*="background:#44442d"]::after{right:-150px;bottom:-190px;width:min
 .skip:focus{left:16px;top:16px}
 .hp{position:absolute;left:-9999px}
 img{max-width:100%}
+
+/* Loading screen: olive curtain, three arches rise, then the curtain lifts. Plays on the first page of each visit. */
+#intro{position:fixed;inset:0;z-index:100;background:#44442d;display:flex;align-items:center;justify-content:center;animation:curtain .8s cubic-bezier(.7,0,.2,1) 1.5s forwards;pointer-events:none}
+#intro svg{width:120px;height:auto;overflow:visible}
+#intro path{fill:#ebe0cf;transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:archup .55s cubic-bezier(.2,.8,.2,1) forwards}
+#intro path:nth-child(2){animation-delay:.18s}#intro path:nth-child(3){animation-delay:.36s}
+@keyframes archup{to{transform:scaleY(1)}}
+@keyframes curtain{to{transform:translateY(-100%);visibility:hidden}}
+.no-intro #intro{display:none}
+@media (prefers-reduced-motion:reduce){#intro{display:none}}
