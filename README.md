@@ -3,7 +3,7 @@
 The website for Studio Mills, Camilla's interior design studio.
 
 - Built with [Eleventy](https://www.11ty.dev/) from the signed-off Claude Design canvas.
-- Hosted on Netlify. Every push to `main` deploys automatically.
+- Hosted on Netlify (project `studio-mills`, test address https://studio-mills.netlify.app). Every push to `main` deploys automatically.
 - The enquiry form uses Netlify Forms (no email address or phone number appears on the site).
 
 ## Working on it locally
