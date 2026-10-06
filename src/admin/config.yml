@@ -1,0 +1,799 @@
+# Decap CMS settings for the Studio Mills website (the editor at /admin/).
+backend:
+  name: github
+  repo: stuartmleach-collab/studio-mills-website
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  site_domain: studio-mills.netlify.app
+  commit_messages:
+    create: Add {{collection}} "{{slug}}" (via CMS)
+    update: Update {{collection}} "{{slug}}" (via CMS)
+    delete: Delete {{collection}} "{{slug}}" (via CMS)
+    uploadMedia: Upload photo "{{path}}" (via CMS)
+    deleteMedia: Delete photo "{{path}}" (via CMS)
+publish_mode: editorial_workflow
+show_preview_links: true
+site_url: https://studio-mills.netlify.app
+display_url: https://studio-mills.netlify.app
+logo_url: /assets/img/brand/mark.svg
+media_folder: src/assets/img/photos
+public_folder: /assets/img/photos
+slug:
+  encoding: ascii
+  clean_accents: true
+collections:
+- name: projects
+  label: Projects
+  editor:
+    preview: false
+  label_singular: project
+  folder: src/projects
+  create: true
+  delete: true
+  extension: md
+  format: frontmatter
+  slug: '{{slug}}'
+  identifier_field: title
+  summary: '{{order}}. {{title}}'
+  sortable_fields:
+  - order
+  - title
+  view_filters:
+  - label: Hidden from the site
+    field: hidden
+    pattern: true
+  description: Each project has its own page. The position number sets where it appears on the Projects page and which project comes next.
+  fields:
+  - label: Project name
+    name: title
+    widget: string
+    hint: Shown on the project cards and in the "Next project" link.
+  - label: Position in the list
+    name: order
+    widget: number
+    value_type: int
+    min: 1
+    hint: 1 = first.
+  - label: Feature at the top of the Projects page
+    name: featured
+    widget: boolean
+    default: false
+    hint: Turn this on for one project only.
+  - label: Hide from the site
+    name: hidden
+    widget: boolean
+    default: false
+    hint: Keeps the project here but takes its page off the website.
+  - label: Short room name
+    name: crumb
+    widget: string
+    hint: Used in the "Projects / …" link at the top of the page, e.g. Kitchen.
+  - label: Page heading
+    name: heading
+    widget: string
+  - label: Introduction
+    name: intro
+    widget: text
+  - label: Room
+    name: room
+    widget: string
+  - label: Location
+    name: location
+    widget: string
+  - label: Scope
+    name: scope
+    widget: string
+    hint: e.g. Full design, or Styling
+  - label: Completed
+    name: completed
+    widget: string
+    hint: e.g. 2025
+  - label: Main photo
+    name: hero
+    widget: object
+    collapsed: false
+    fields:
+    - label: Photo
+      name: image
+      widget: image
+      choose_url: false
+    - &id001
+      label: Describe the photo
+      name: alt
+      widget: string
+      hint: 'A short description for people using screen readers, and for Google. For example: "Marble bathroom with a walnut vanity".'
+    - label: Shape
+      name: shape
+      widget: select
+      options: &id002
+      - label: Portrait (4:5)
+        value: portrait
+      - label: Tall (3:4)
+        value: tall
+      - label: Landscape (3:2)
+        value: landscape
+      - label: Landscape (4:3)
+        value: landscape43
+      - label: Square
+        value: square
+      default: landscape
+    - label: Frame
+      name: frame
+      widget: select
+      options: &id003
+      - label: Frame 2 · clay
+        value: v2-clay
+      - label: Frame 3 · clay
+        value: v3-clay
+      - label: Frame 4 · olive
+        value: v4-olive
+      - label: Frame 5 · olive, with ornaments
+        value: v5-olive
+      - label: Frame 5 · clay, with ornaments
+        value: v5-clay
+      - label: Frame 6 · olive
+        value: v6-olive
+      - label: Frame 6 · cream (for the olive band)
+        value: v6-cream
+      default: v5-olive
+    - label: Tilt
+      name: tilt
+      widget: hidden
+      default: 1
+  - label: 'The brief: headline'
+    name: brief_headline
+    widget: text
+  - label: 'The brief: text'
+    name: brief_text
+    widget: text
+  - label: Photo for the Projects page card
+    name: card_image
+    widget: object
+    collapsed: false
+    fields:
+    - label: Photo
+      name: image
+      widget: image
+      choose_url: false
+    - *id001
+    - label: Shape
+      name: shape
+      widget: select
+      options: *id002
+      default: portrait
+    - label: Frame
+      name: frame
+      widget: select
+      options: *id003
+      default: v5-olive
+    - label: Tilt
+      name: tilt
+      widget: hidden
+      default: 1
+  - label: Label under the card
+    name: card_label
+    widget: string
+    hint: e.g. Kitchen, Brighton
+  - label: Featured summary
+    name: summary
+    widget: text
+    hint: Only shown if this is the featured project.
+    required: false
+  - label: Page sections
+    name: blocks
+    widget: list
+    label_singular: section
+    collapsed: true
+    hint: The sections below the brief, in order. Drag to reorder, or add a new one at the bottom.
+    types:
+    - label: Two photos (smaller left, larger right)
+      name: pair
+      widget: object
+      summary: Two photos
+      fields:
+      - label: Photos
+        name: photos
+        widget: list
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+        - label: Caption (optional)
+          name: caption
+          widget: string
+          required: false
+        - label: Shape
+          name: shape
+          widget: select
+          options: *id002
+          default: portrait
+        - label: Frame
+          name: frame
+          widget: select
+          options: *id003
+          default: v5-olive
+        - label: Tilt
+          name: tilt
+          widget: hidden
+          default: 1
+        collapsed: true
+        summary: '{{fields.caption}}'
+        min: 1
+        max: 2
+        label_singular: photo
+    - label: 'Olive band: the approach'
+      name: approach
+      widget: object
+      summary: 'Olive band: {{fields.headline}}'
+      fields:
+      - label: Small label above
+        name: eyebrow
+        widget: string
+      - label: Headline
+        name: headline
+        widget: text
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Photo
+        name: photo
+        widget: object
+        collapsed: false
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+        - label: Shape
+          name: shape
+          widget: select
+          options: *id002
+          default: portrait
+        - label: Frame
+          name: frame
+          widget: select
+          options: *id003
+          default: v6-cream
+        - label: Tilt
+          name: tilt
+          widget: hidden
+          default: 1
+    - label: Row of small photos
+      name: details
+      widget: object
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Photos
+        name: photos
+        widget: list
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+        - label: Caption (optional)
+          name: caption
+          widget: string
+          required: false
+        - label: Shape
+          name: shape
+          widget: select
+          options: *id002
+          default: tall
+        - label: Frame
+          name: frame
+          widget: select
+          options: *id003
+          default: v3-clay
+        - label: Tilt
+          name: tilt
+          widget: hidden
+          default: 1
+        collapsed: true
+        summary: '{{fields.caption}}'
+        min: 1
+        max: 6
+        label_singular: photo
+    - label: Two photos (larger left, smaller right)
+      name: pair_wide
+      widget: object
+      summary: Two photos
+      fields:
+      - label: Photos
+        name: photos
+        widget: list
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+        - label: Caption (optional)
+          name: caption
+          widget: string
+          required: false
+        - label: Shape
+          name: shape
+          widget: select
+          options: *id002
+          default: portrait
+        - label: Frame
+          name: frame
+          widget: select
+          options: *id003
+          default: v5-olive
+        - label: Tilt
+          name: tilt
+          widget: hidden
+          default: 1
+        collapsed: true
+        summary: '{{fields.caption}}'
+        min: 1
+        max: 2
+        label_singular: photo
+    - label: One photo with a caption
+      name: single
+      widget: object
+      summary: One photo
+      fields:
+      - label: Photo
+        name: photo
+        widget: object
+        collapsed: false
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+        - label: Caption (optional)
+          name: caption
+          widget: string
+          required: false
+        - label: Shape
+          name: shape
+          widget: select
+          options: *id002
+          default: portrait
+        - label: Frame
+          name: frame
+          widget: select
+          options: *id003
+          default: v5-olive
+        - label: Tilt
+          name: tilt
+          widget: hidden
+          default: 1
+    - label: Client quote with a photo
+      name: quote
+      widget: object
+      summary: 'Quote: {{fields.quote}}'
+      fields:
+      - label: Quote
+        name: quote
+        widget: text
+      - label: Client name or initials
+        name: attribution
+        widget: string
+        required: false
+      - label: Photo
+        name: photo
+        widget: object
+        collapsed: false
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+        - label: Shape
+          name: shape
+          widget: select
+          options: *id002
+          default: portrait
+        - label: Frame
+          name: frame
+          widget: select
+          options: *id003
+          default: v5-olive
+        - label: Tilt
+          name: tilt
+          widget: hidden
+          default: 1
+    - label: Materials list with a photo
+      name: materials
+      widget: object
+      summary: '{{fields.heading}}'
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+      - label: Materials
+        name: items
+        widget: list
+        fields:
+        - label: What (e.g. Worktops)
+          name: label
+          widget: string
+        - label: Material (e.g. Honed marble)
+          name: value
+          widget: string
+        collapsed: true
+        summary: '{{fields.label}}: {{fields.value}}'
+        label_singular: material
+      - label: Small note underneath
+        name: note
+        widget: string
+        required: false
+      - label: Photo
+        name: photo
+        widget: object
+        collapsed: false
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+        - label: Shape
+          name: shape
+          widget: select
+          options: *id002
+          default: portrait
+        - label: Frame
+          name: frame
+          widget: select
+          options: *id003
+          default: v4-olive
+        - label: Tilt
+          name: tilt
+          widget: hidden
+          default: 1
+- name: pages
+  label: Page text
+  label_singular: page
+  editor:
+    preview: false
+  files:
+  - label: Home
+    name: home
+    file: src/_data/home.json
+    fields:
+    - label: Main heading
+      name: hero_heading
+      widget: text
+    - label: Introduction
+      name: hero_text
+      widget: text
+    - label: Main photo
+      name: hero_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+    - label: Small overlapping photo
+      name: hero_small_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+    - label: Caption under the photos
+      name: hero_caption
+      widget: string
+    - label: '"I''m Camilla" headline'
+      name: intro_headline
+      widget: text
+    - label: Text under the headline
+      name: intro_text
+      widget: text
+    - label: 'Olive band: photo'
+      name: band_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+    - label: 'Olive band: heading'
+      name: band_heading
+      widget: string
+    - label: 'Olive band: text'
+      name: band_text
+      widget: text
+    - label: Projects heading
+      name: projects_heading
+      widget: string
+    - label: Project cards
+      name: project_cards
+      widget: list
+      fields:
+      - label: Links to
+        name: project
+        widget: relation
+        collection: projects
+        value_field: '{{slug}}'
+        search_fields:
+        - title
+        display_fields:
+        - title
+      - label: Card title
+        name: title
+        widget: string
+      - label: Label under the card
+        name: label
+        widget: string
+      - label: Photo
+        name: photo
+        widget: object
+        collapsed: false
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+      collapsed: true
+      summary: '{{fields.title}}'
+      min: 1
+      max: 3
+      label_singular: card
+    - label: Services heading
+      name: services_heading
+      widget: string
+    - label: Services text
+      name: services_text
+      widget: string
+    - label: Services
+      name: services
+      widget: list
+      fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Short description
+        name: text
+        widget: text
+      collapsed: true
+      summary: '{{fields.title}}'
+      min: 1
+      label_singular: service
+    - label: 'About: quote'
+      name: about_quote
+      widget: text
+    - label: 'About: text'
+      name: about_text
+      widget: text
+    - label: 'About: photo of Camilla'
+      name: about_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+  - label: About
+    name: about
+    file: src/_data/about.json
+    fields:
+    - label: Main heading
+      name: heading
+      widget: string
+    - label: Introduction (larger text)
+      name: lead
+      widget: text
+    - label: Introduction (second paragraph)
+      name: text
+      widget: text
+    - label: Portrait photo
+      name: portrait_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+    - label: 'Where it started: photo'
+      name: history_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+    - label: 'Where it started: caption'
+      name: history_caption
+      widget: string
+    - label: 'Where it started: heading'
+      name: history_heading
+      widget: string
+    - label: 'Where it started: text'
+      name: history_text
+      widget: text
+    - label: 'What I believe: quote'
+      name: belief_quote
+      widget: text
+    - label: 'What I believe: text'
+      name: belief_text
+      widget: text
+    - label: 'What I believe: photo'
+      name: belief_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+    - label: 'How I work: heading'
+      name: work_heading
+      widget: string
+    - label: 'How I work: text'
+      name: work_text
+      widget: text
+    - label: 'How I work: photo'
+      name: work_photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+  - label: Services
+    name: services
+    file: src/_data/services.json
+    fields:
+    - label: Main heading
+      name: heading
+      widget: string
+    - label: Introduction
+      name: intro
+      widget: text
+    - label: Services
+      name: services
+      widget: list
+      fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: intro
+        widget: text
+      - label: What's included
+        name: includes
+        widget: list
+        label_singular: item
+        field:
+          label: Item
+          name: item
+          widget: string
+      - label: Best for
+        name: best_for
+        widget: string
+        required: false
+      - label: Fee
+        name: fee
+        widget: string
+        required: false
+      - label: Photo
+        name: photo
+        widget: object
+        collapsed: false
+        fields:
+        - label: Photo
+          name: image
+          widget: image
+          choose_url: false
+        - *id001
+      collapsed: true
+      summary: '{{fields.title}}'
+      min: 1
+      label_singular: service
+    - label: 'How it works: heading'
+      name: steps_heading
+      widget: string
+    - label: 'How it works: text'
+      name: steps_intro
+      widget: text
+    - label: Steps
+      name: steps
+      widget: list
+      fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Text
+        name: text
+        widget: text
+      collapsed: true
+      summary: '{{fields.title}}'
+      min: 1
+      label_singular: step
+    - label: 'Bottom: heading'
+      name: cta_heading
+      widget: string
+    - label: 'Bottom: text'
+      name: cta_text
+      widget: text
+  - label: Contact
+    name: contact
+    file: src/_data/contact.json
+    fields:
+    - label: Main heading
+      name: heading
+      widget: string
+    - label: Introduction
+      name: intro
+      widget: text
+    - label: Photo
+      name: photo
+      widget: object
+      collapsed: false
+      fields:
+      - label: Photo
+        name: image
+        widget: image
+        choose_url: false
+      - *id001
+    - label: Note beside the Send button
+      name: form_note
+      widget: string
+    - label: 'What happens next: heading'
+      name: next_heading
+      widget: string
+    - label: 'What happens next: steps'
+      name: next_steps
+      widget: list
+      label_singular: step
+      field:
+        label: Step
+        name: item
+        widget: string
+    - label: Working in (area)
+      name: area
+      widget: string
+    - label: 'Thank-you page: heading'
+      name: thanks_heading
+      widget: string
+    - label: 'Thank-you page: text'
+      name: thanks_text
+      widget: text
+      hint: Shown after someone sends the enquiry form.
+  - label: Footer and links
+    name: settings
+    file: src/_data/settings.json
+    fields:
+    - label: Instagram link
+      name: instagram
+      widget: string
+      hint: The full web address of the Instagram page, starting https://
+    - label: Footer heading
+      name: footer_heading
+      widget: string
