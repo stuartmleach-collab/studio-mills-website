@@ -1,0 +1,39 @@
+---
+title: "Contact"
+section: "contact"
+description: "Tell Camilla about your home and start a conversation with Studio Mills."
+layout: base.njk
+---
+<section class="wrap" style="padding:56px clamp(20px,4vw,56px) 112px">
+<div class="split" style="align-items:start;row-gap:56px">
+<div style="grid-column:1 / span 7">
+<p class="eyebrow" style="margin-bottom:18px">Contact</p>
+<h1 class="pg-h1">Let’s talk about your home.</h1>
+<p style="margin:28px 0 0;font-size:20px;line-height:1.5;max-width:30em">Tell me a little about your project and I’ll be in touch [within two working days].</p>
+
+<form class="form" style="margin-top:48px" name="enquiry" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company" aria-label="Enquiry form">
+<input type="hidden" name="form-name" value="enquiry">
+<p class="hp"><label>Leave this empty: <input name="company" tabindex="-1" autocomplete="off"></label></p>
+<label class="field" for="c-name">Your name<input id="c-name" name="name" type="text" autocomplete="name" required></label>
+<label class="field" for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" required></label>
+<label class="field" for="c-phone"><span>Phone <span class="opt">(optional)</span></span><input id="c-phone" name="phone" type="tel" autocomplete="tel"></label>
+<label class="field" for="c-type">What can I help with?<select id="c-type" name="service"><option>Full interior design</option><option>Room by room</option><option>A design consultation</option><option>Not sure yet</option></select></label>
+<label class="field full" for="c-where"><span>Where is your home? <span class="opt">(town or postcode)</span></span><input id="c-where" name="where" type="text" autocomplete="postal-code"></label>
+<label class="field full" for="c-msg">Tell me about your project<textarea id="c-msg" name="message" placeholder="Which rooms, what you'd like to change, and any timings" required></textarea></label>
+<div class="full" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px"><button type="submit" class="btn btn-clay">Send message</button><p style="margin:0;font-size:14px">[How enquiries are handled, with a link to the privacy policy.]</p></div>
+</form>
+
+</div>
+<div style="grid-column:9 / span 4;padding-top:24px">
+<div class="fr fr-v5-olive tilt" style="--rot:1.5deg;--bw0:44px"><div><div style="aspect-ratio:4/5"><img class="cover" src="/assets/img/photos/bath-candles.jpg" alt="Candles in cut-glass holders, a stone vessel basin and a brass wall tap"></div></div></div>
+<h2 class="dsp" style="font-size:28px;line-height:1.1;margin:56px 0 24px">What happens next</h2>
+<ol class="next">
+<li><span class="n">1</span><span>[I read every enquiry myself and reply by email.]</span></li>
+<li><span class="n">2</span><span>[We arrange a short call to talk it through.]</span></li>
+<li><span class="n">3</span><span>[If it’s a good fit, I come and see your home.]</span></li>
+</ol>
+<p style="margin:40px 0 0;font-size:16px"><b style="font-weight:500">Working in</b><br>[Area, e.g. Sussex and the surrounding counties]</p>
+<p style="margin:20px 0 0;font-size:16px"><a class="ulink" href="{{ site.instagram }}" rel="noopener">Follow along on Instagram</a></p>
+</div>
+</div>
+</section>
