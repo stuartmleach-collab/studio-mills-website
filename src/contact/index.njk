@@ -17,7 +17,7 @@ layout: base.njk
 <label class="field" for="c-name">Your name<input id="c-name" name="name" type="text" autocomplete="name" required></label>
 <label class="field" for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" required></label>
 <label class="field" for="c-phone"><span>Phone <span class="opt">(optional)</span></span><input id="c-phone" name="phone" type="tel" autocomplete="tel"></label>
-<label class="field" for="c-type">What can I help with?<select id="c-type" name="service"><option>Full interior design</option><option>Room by room</option><option>A design consultation</option><option>Not sure yet</option></select></label>
+<div class="field"><label for="c-type">What can I help with?</label><select id="c-type" name="service"><option>Full interior design</option><option>Room by room</option><option>A design consultation</option><option>Not sure yet</option></select></div>
 <label class="field full" for="c-where"><span>Where is your home? <span class="opt">(town or postcode)</span></span><input id="c-where" name="where" type="text" autocomplete="postal-code"></label>
 <label class="field full" for="c-msg">Tell me about your project<textarea id="c-msg" name="message" placeholder="Which rooms, what you'd like to change, and any timings" required></textarea></label>
 <div class="full" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px"><button type="submit" class="btn btn-clay">Send message</button><p style="margin:0;font-size:14px">[How enquiries are handled, with a link to the privacy policy.]</p></div>
