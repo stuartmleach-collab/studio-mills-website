@@ -1,0 +1,10 @@
+# never commit credentials
+git-hub token.txt
+github-token*
+*.token
+.env
+node_modules/
+_site/
+.DS_Store
+Thumbs.db
+desktop.ini
