@@ -20,3 +20,12 @@ npm run build  # builds into _site/
 - `src/_includes/` shared header, mobile menu, footer and page layout
 - `src/_data/site.json` site name, description, Instagram link
 - `src/assets/` stylesheet, script, fonts, brand graphics and photos
+
+## How changes are made
+
+1. Every change is made on its own branch and opened as a pull request on GitHub.
+2. Netlify builds a **deploy preview** for each pull request and links it on the pull request page.
+3. Check the preview. If it looks right, click **Merge pull request**.
+4. Merging into `main` publishes the change to the live site automatically.
+
+Nothing reaches the live site until a pull request is merged.
