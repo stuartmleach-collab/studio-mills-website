@@ -28,5 +28,5 @@ Website for Camilla's interior design studio, **Mills** (logo: "Mills Interior D
 - The enquiry form is a Netlify Form named `enquiry`. Its email alerts are set up in Netlify, not in code.
 
 ## Open items
-- Domain not chosen yet (the site is on studio-mills.netlify.app). It blocks DNS and analytics.
+- The domain is live at [www.designbymills.co.uk](https://www.designbymills.co.uk) (designbymills.co.uk redirects there). DNS is at Namecheap, which also handles email. Analytics is the next step.
 - Some text in [square brackets] is placeholder copy waiting for Camilla. The Instagram link is a placeholder.

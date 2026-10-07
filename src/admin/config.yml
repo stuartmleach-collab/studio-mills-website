@@ -14,8 +14,8 @@ backend:
     deleteMedia: Delete photo "{{path}}" (via CMS)
 publish_mode: editorial_workflow
 show_preview_links: true
-site_url: https://studio-mills.netlify.app
-display_url: https://studio-mills.netlify.app
+site_url: https://www.designbymills.co.uk
+display_url: https://www.designbymills.co.uk
 logo_url: /assets/img/brand/mark.svg
 media_folder: src/assets/img/photos
 public_folder: /assets/img/photos

@@ -3,7 +3,7 @@
 The website for Studio Mills, Camilla's interior design studio.
 
 - Built with [Eleventy](https://www.11ty.dev/) from the signed-off Claude Design canvas.
-- Hosted on Netlify (project `studio-mills`, test address https://studio-mills.netlify.app). Every push to `main` deploys automatically.
+- Live at https://www.designbymills.co.uk (designbymills.co.uk redirects there). Hosted on Netlify (project `studio-mills`, originally at the test address https://studio-mills.netlify.app). Every push to `main` deploys automatically.
 - The enquiry form uses Netlify Forms (no email address or phone number appears on the site).
 
 ## Working on it locally
@@ -32,7 +32,7 @@ Nothing reaches the live site until a pull request is merged.
 
 ## Editing the site (CMS)
 
-Camilla edits text, photos and projects at **/admin/** (for now https://studio-mills.netlify.app/admin/), logging in with GitHub. The editor is [Decap CMS](https://decapcms.org).
+Camilla edits text, photos and projects at **/admin/** (https://www.designbymills.co.uk/admin/), logging in with GitHub. The editor is [Decap CMS](https://decapcms.org).
 
 - **Projects:** one file per project in `src/projects/*.md`. The layout is `src/_includes/project.njk`, and its page sections are chosen in the CMS.
 - **Page text:** `src/_data/home.json`, `about.json`, `services.json`, `contact.json` (also used by the thank-you page) and `settings.json` (Instagram link, footer heading).
