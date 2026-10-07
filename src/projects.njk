@@ -1,0 +1,33 @@
+---
+title: "Projects"
+permalink: "/projects/"
+section: "projects"
+description: "Selected interior design projects by Studio Mills."
+layout: base.njk
+---
+<section class="wrap" style="padding:56px clamp(20px,4vw,56px) 72px">
+<div class="split" style="align-items:end;row-gap:24px">
+<div style="grid-column:1 / span 7"><p class="eyebrow" style="margin-bottom:18px">Projects</p><h1 class="pg-h1">Homes, room by room.</h1></div>
+<p style="grid-column:9 / span 4;margin:0">[One or two sentences in Camilla's words about the work shown here: whole houses, single rooms and styling.]</p>
+</div>
+</section>
+
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 112px">
+{%- from "photo.njk" import photo -%}
+{%- set featured = (collections.projectList | selectattr("data.featured") | first) or collections.projectList[0] -%}
+{%- if featured %}{% set f = featured.data %}
+<a class="feat" href="{{ featured.url }}">
+<div class="feat-media">{{ photo(f.card_image, 56, false, true) }}</div>
+<div class="feat-text"><p class="eyebrow">Featured · {{ f.card_label }}</p><h2 class="dsp" style="font-size:clamp(36px,3.6vw,52px);line-height:1.02;margin:16px 0 0">{{ f.title }}</h2><p style="margin:20px 0 0">{{ f.summary }}</p><p style="margin:28px 0 0"><span class="ulink">See the project</span></p></div>
+</a>
+{%- endif %}
+</section>
+
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 120px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:48px"><h2 class="dsp" style="font-size:40px;line-height:1">More projects</h2></div>
+<div class="pgrid">
+{% for proj in collections.projectList | withoutUrl(featured.url) %}{% set c = proj.data %}
+<a class="card" href="{{ proj.url }}" style="display:block;text-decoration:none;color:#000000;margin-top:{{ '48' if loop.index0 % 2 else '0' }}px">{{ photo(c.card_image, 36, false, true) }}<h3 class="dsp" style="font-size:24px;line-height:1.15;margin-top:22px">{{ c.title }}</h3><p style="margin:6px 0 0;font-size:14px">{{ c.card_label }}</p></a>
+{% endfor %}
+</div>
+</section>

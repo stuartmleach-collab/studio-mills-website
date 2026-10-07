@@ -29,3 +29,15 @@ npm run build  # builds into _site/
 4. Merging into `main` publishes the change to the live site automatically.
 
 Nothing reaches the live site until a pull request is merged.
+
+## Editing the site (CMS)
+
+Camilla edits text, photos and projects at **/admin/** (for now https://studio-mills.netlify.app/admin/), logging in with GitHub. The editor is [Decap CMS](https://decapcms.org).
+
+- **Projects:** one file per project in `src/projects/*.md`. The layout is `src/_includes/project.njk`, and its page sections are chosen in the CMS.
+- **Page text:** `src/_data/home.json`, `about.json`, `services.json`, `contact.json` (also used by the thank-you page) and `settings.json` (Instagram link, footer heading).
+- **Photos** uploaded in the CMS go into `src/assets/img/photos/`.
+- The CMS settings are in `src/admin/config.yml`.
+- Edits go Draft → Ready → Publish. Publishing merges the change into `main`, and Netlify puts it live.
+- Logging in uses a GitHub OAuth app connected to Netlify (Project configuration → Access & security → OAuth).
+

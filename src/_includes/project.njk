@@ -1,0 +1,96 @@
+---
+layout: base.njk
+section: projects
+---
+{%- from "photo.njk" import photo -%}
+<section class="wrap" style="padding:48px clamp(20px,4vw,56px) 64px">
+<nav class="crumb" aria-label="Breadcrumb"><a href="/projects/">Projects</a><span aria-hidden="true">/</span><span aria-current="page">{{ crumb }}</span></nav>
+<div class="split" style="align-items:end;row-gap:24px">
+<div style="grid-column:1 / span 8"><h1 class="pg-h1">{{ heading }}</h1></div>
+<p style="grid-column:9 / span 4;margin:0;font-size:20px;line-height:1.5">{{ intro }}</p>
+</div>
+<dl class="meta" style="margin-top:48px">
+<div><dt>Room</dt><dd>{{ room }}</dd></div>
+<div><dt>Location</dt><dd>{{ location }}</dd></div>
+<div><dt>Scope</dt><dd>{{ scope }}</dd></div>
+<div><dt>Completed</dt><dd>{{ completed }}</dd></div>
+</dl>
+</section>
+
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 104px">
+{{ photo(hero, 72) }}
+</section>
+
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 104px">
+<div class="split" style="align-items:start;row-gap:32px">
+<div style="grid-column:2 / span 4"><p class="eyebrow">The brief</p></div>
+<div style="grid-column:6 / span 6"><p class="dsp" style="font-size:32px;line-height:1.25">{{ brief_headline }}</p><p style="margin:24px 0 0">{{ brief_text }}</p></div>
+</div>
+</section>
+{% for b in blocks %}
+{%- set nxt = blocks[loop.index] -%}
+{% if b.type == "pair" %}
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 104px">
+<div class="g2">
+{%- set a = b.photos[0] %}{% set c = b.photos[1] %}
+<div style="grid-column:1 / span 5">{{ photo(a, 44) }}{% if a.caption %}<p class="cap">{{ a.caption }}</p>{% endif %}</div>
+{% if c %}<div style="grid-column:7 / span 6;margin-bottom:64px">{{ photo(c, 48) }}{% if c.caption %}<p class="cap">{{ c.caption }}</p>{% endif %}</div>{% endif %}
+</div>
+</section>
+{% elif b.type == "pair_wide" %}
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 104px">
+<div class="g2">
+{%- set a = b.photos[0] %}{% set c = b.photos[1] %}
+<div style="grid-column:1 / span 6">{{ photo(a, 48) }}{% if a.caption %}<p class="cap">{{ a.caption }}</p>{% endif %}</div>
+{% if c %}<div style="grid-column:8 / span 5;margin-bottom:96px">{{ photo(c, 40) }}{% if c.caption %}<p class="cap">{{ c.caption }}</p>{% endif %}</div>{% endif %}
+</div>
+</section>
+{% elif b.type == "approach" %}
+<section style="background:#44442d;color:#ebe0cf;padding:104px 0">
+<div class="wrap split" style="align-items:center;row-gap:40px">
+<div style="grid-column:1 / span 6"><p class="eyebrow" style="color:#cfc5ac">{{ b.eyebrow }}</p><p class="dsp" style="font-size:clamp(32px,3.4vw,48px);line-height:1.1;margin:20px 0 0;color:#ebe0cf">{{ b.headline }}</p>{% if b.text %}<p style="margin:24px 0 0;color:#cfc5ac;max-width:30em">{{ b.text }}</p>{% endif %}</div>
+<div style="grid-column:8 / span 5">{{ photo(b.photo, 48, true) }}</div>
+</div>
+</section>
+{% if not nxt or nxt.type != "details" %}<div style="height:104px"></div>{% endif %}
+{% elif b.type == "details" %}
+<section class="wrap" style="padding:104px clamp(20px,4vw,56px) 96px">
+<h2 class="dsp" style="font-size:40px;line-height:1;margin:0 0 48px">{{ b.heading }}</h2>
+<div class="g3">
+{% for p in b.photos %}<figure style="margin:{{ '48px 0 0' if loop.index0 % 2 else '0' }}">{{ photo(p, 32) }}{% if p.caption %}<figcaption class="cap">{{ p.caption }}</figcaption>{% endif %}</figure>
+{% endfor %}</div>
+</section>
+{% elif b.type == "single" %}
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 104px">
+<div class="split" style="align-items:center;row-gap:32px">
+<div style="grid-column:2 / span 5">{{ photo(b.photo, 48) }}</div>
+<div style="grid-column:8 / span 4">{% if b.photo.caption %}<p class="cap" style="font-size:16px">{{ b.photo.caption }}</p>{% endif %}</div>
+</div>
+</section>
+{% elif b.type == "quote" %}
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 112px">
+<div class="split" style="align-items:center;row-gap:40px">
+<div style="grid-column:1 / span 5">{{ photo(b.photo, 44) }}</div>
+<div style="grid-column:7 / span 5"><p class="dsp" style="font-size:clamp(28px,2.8vw,40px);line-height:1.2">{{ b.quote }}</p>{% if b.attribution %}<p style="margin:20px 0 0;font-size:15px">{{ b.attribution }}</p>{% endif %}</div>
+</div>
+</section>
+{% elif b.type == "materials" %}
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 112px">
+<div class="split" style="align-items:start;row-gap:40px">
+<div style="grid-column:1 / span 5">{{ photo(b.photo, 44) }}</div>
+<div style="grid-column:7 / span 6"><h2 class="dsp" style="font-size:40px;line-height:1;margin:0 0 28px">{{ b.heading }}</h2>
+<ul class="mats">
+{% for i in b.items %}<li><span>{{ i.label }}</span><span>{{ i.value }}</span></li>
+{% endfor %}</ul>
+{% if b.note %}<p style="margin:28px 0 0;font-size:15px">{{ b.note }}</p>{% endif %}
+</div>
+</div>
+</section>
+{% endif %}
+{% endfor %}
+{%- set nextp = collections.projectList | nextProject(page.url) -%}
+{% if nextp and nextp.url != page.url %}
+<section class="wrap" style="padding:0 clamp(20px,4vw,56px) 120px">
+<a class="nextp" href="{{ nextp.url }}"><div><p class="eyebrow">Next project</p><p class="dsp" style="font-size:clamp(32px,3.4vw,48px);line-height:1.05;margin:10px 0 0">{{ nextp.data.title }}</p></div><span class="btn btn-line">Next project</span></a>
+</section>
+{% endif %}

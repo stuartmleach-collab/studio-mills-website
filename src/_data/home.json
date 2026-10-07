@@ -1,0 +1,73 @@
+{
+  "hero_heading": "Thoughtful interiors, made to be lived in.",
+  "hero_text": "Homes with character, designed around the way you really live: the muddy boots, the long Sunday lunches, the chair you always end up in.",
+  "hero_photo": {
+    "image": "/assets/img/photos/home-basins.jpg",
+    "alt": "Double stone basins on a walnut vanity, brass taps against Calacatta Viola marble, with autumn beech branches"
+  },
+  "hero_small_photo": {
+    "image": "/assets/img/photos/home-candles.jpg",
+    "alt": "Lit candles in cut-glass holders beside a stone basin and brass tap"
+  },
+  "hero_caption": "Marble, walnut and brushed brass in a family bathroom. [Location]",
+  "intro_headline": "I'm Camilla, and Studio Mills is my interior design studio. I make rooms that feel like the people who live in them, and work beautifully on an ordinary Tuesday.",
+  "intro_text": "[Two or three sentences in Camilla's words: where the studio is based, the kind of homes she works on, and what clients can expect from working together.]",
+  "band_photo": {
+    "image": "/assets/img/photos/home-rug.jpg",
+    "alt": "Close-up of a striped rug in berry, ochre, teal and cream"
+  },
+  "band_heading": "Rooms with something to say.",
+  "band_text": "A good home tells you something about the people in it. I'm not afraid of colour, pattern or a rug that starts a conversation, and I always start with how a room needs to work.",
+  "projects_heading": "Selected projects",
+  "project_cards": [
+    {
+      "project": "sitting-room",
+      "title": "The cork-lined sitting room",
+      "label": "Sitting room, [Location]",
+      "photo": {
+        "image": "/assets/img/photos/home-sitting-room.jpg",
+        "alt": "A sitting room at dusk: cork-lined alcoves, a cream fire surround, string shelving and a striped rug"
+      }
+    },
+    {
+      "project": "kitchen",
+      "title": "An autumn kitchen corner",
+      "label": "Kitchen styling, [Location]",
+      "photo": {
+        "image": "/assets/img/photos/home-kitchen-corner.jpg",
+        "alt": "Chinese lantern branches in a white vase beside a walnut board and two small pumpkins"
+      }
+    },
+    {
+      "project": "main-bedroom",
+      "title": "A cane bed, lit low",
+      "label": "Bedroom, [Location]",
+      "photo": {
+        "image": "/assets/img/photos/home-cane-bed.jpg",
+        "alt": "A bed with a cane headboard, backlit with a warm strip of light, globe lamps either side"
+      }
+    }
+  ],
+  "services_heading": "However much help you need.",
+  "services_text": "From a single tricky room to a whole house, start to finish.",
+  "services": [
+    {
+      "title": "Full interior design",
+      "text": "[Short description: concept to completion, including drawings, sourcing and working with your builders.]"
+    },
+    {
+      "title": "Room by room",
+      "text": "[Short description: one or two rooms designed properly, with a scheme you can follow at your own pace.]"
+    },
+    {
+      "title": "A design consultation",
+      "text": "[Short description: a few hours together in your home, and a plan to take away.]"
+    }
+  ],
+  "about_quote": "“Good design should make Tuesday evenings better, not just the photos.”",
+  "about_text": "[A short paragraph introducing Camilla: her background, what she loves, and why she started Studio Mills.]",
+  "about_photo": {
+    "image": "/assets/img/photos/home-camilla.jpg",
+    "alt": "Camilla, founder of Studio Mills"
+  }
+}

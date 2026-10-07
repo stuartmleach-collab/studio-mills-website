@@ -1,0 +1,18 @@
+{
+  "heading": "Let’s talk about your home.",
+  "intro": "Tell me a little about your project and I’ll be in touch [within two working days].",
+  "form_note": "[How enquiries are handled, with a link to the privacy policy.]",
+  "photo": {
+    "image": "/assets/img/photos/bath-candles.jpg",
+    "alt": "Candles in cut-glass holders, a stone vessel basin and a brass wall tap"
+  },
+  "next_heading": "What happens next",
+  "next_steps": [
+    "[I read every enquiry myself and reply by email.]",
+    "[We arrange a short call to talk it through.]",
+    "[If it’s a good fit, I come and see your home.]"
+  ],
+  "area": "[Area, e.g. Sussex and the surrounding counties]",
+  "thanks_heading": "Thank you.",
+  "thanks_text": "Your message is on its way. I’ll reply by email [within two working days]."
+}

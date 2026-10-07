@@ -1,0 +1,28 @@
+{
+  "heading": "Hello, I’m Camilla.",
+  "lead": "I’m the founder of Studio Mills. With a background in theatre design, I’ve always been passionate about creating meaningful spaces with real impact.",
+  "text": "I trained in professional interior design and started the studio to help people create homes that look wonderful and truly work for them.",
+  "portrait_photo": {
+    "image": "/assets/img/photos/about-portrait.jpg",
+    "alt": "Camilla, founder of Studio Mills, against a deep green wall"
+  },
+  "history_photo": {
+    "image": "/assets/img/photos/about-history.jpg",
+    "alt": "An early photograph of Camilla in a leather jacket in front of a theatre set with masks on the wall"
+  },
+  "history_caption": "[Caption: where and when this was taken.]",
+  "history_heading": "From the stage to the home.",
+  "history_text": "[Two or three sentences in Camilla’s words: what theatre design taught her about colour, light and telling a story with a room, and how that shapes her interiors today.]",
+  "belief_quote": "“Every space has the power to change how we feel, think and live.”",
+  "belief_text": "My approach blends modern sophistication with timeless charm, drawing on nature and on the city. I want every home I work on to reflect the people in it and to bring joy, connection and a real sense of belonging.",
+  "belief_photo": {
+    "image": "/assets/img/photos/about-profile.jpg",
+    "alt": "Camilla in profile in soft evening light beside dark timber panelling"
+  },
+  "work_heading": "Hands-on, from first sketch to final cushion.",
+  "work_text": "[Two or three sentences: how Camilla works with clients, what they can expect, and the kind of homes and projects she loves most.]",
+  "work_photo": {
+    "image": "/assets/img/photos/about-work.jpg",
+    "alt": "Camilla at a dining table laying out material sample boards"
+  }
+}

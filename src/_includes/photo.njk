@@ -1,0 +1,4 @@
+{%- macro photo(p, bw, fbg=false, zoom=false) -%}
+{%- set shapes = {"portrait": "4/5", "tall": "3/4", "landscape": "3/2", "landscape43": "4/3", "square": "1/1"} -%}
+<div class="fr fr-{{ p.frame or 'v5-olive' }} tilt" style="--rot:{{ p.tilt or 0 }}deg;--bw0:{{ bw }}px{% if fbg %};--fbg:#44442d{% endif %}"><div><div {% if zoom %}class="zoom" {% endif %}style="aspect-ratio:{{ shapes[p.shape] or '4/5' }}"><img class="cover" src="{{ p.image }}" alt="{{ p.alt }}"></div></div></div>
+{%- endmacro -%}

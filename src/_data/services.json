@@ -1,0 +1,78 @@
+{
+  "heading": "However much help you need.",
+  "intro": "From a single tricky room to a whole house, start to finish. [One more sentence in Camilla's words about how she likes to work.]",
+  "services": [
+    {
+      "title": "Full interior design",
+      "intro": "[Two sentences: concept to completion, including drawings, sourcing and working with your builders.]",
+      "includes": [
+        "[Initial consultation and brief]",
+        "[Concept, mood boards and samples]",
+        "[Layouts and technical drawings]",
+        "[Sourcing and ordering]",
+        "[Working with your builders and trades]",
+        "[Final styling]"
+      ],
+      "best_for": "[e.g. a renovation or whole-house project]",
+      "fee": "[From £… / on request]",
+      "photo": {
+        "image": "/assets/img/photos/kitchen-hero.jpg",
+        "alt": "A kitchen with dark cabinets, a butler sink, range cooker and warm wall lights"
+      }
+    },
+    {
+      "title": "Room by room",
+      "intro": "[Two sentences: one or two rooms designed properly, with a scheme you can follow at your own pace.]",
+      "includes": [
+        "[Design consultation in your home]",
+        "[Scheme and mood board]",
+        "[Layout for the room]",
+        "[Shopping list with links]",
+        "[One round of changes]"
+      ],
+      "best_for": "[e.g. a renovation or whole-house project]",
+      "fee": "[From £… / on request]",
+      "photo": {
+        "image": "/assets/img/photos/kids-a.jpg",
+        "alt": "A scalloped headboard in red, cream and green woven fabric with pink piping"
+      }
+    },
+    {
+      "title": "A design consultation",
+      "intro": "[Two sentences: a few hours together in your home, and a plan to take away.]",
+      "includes": [
+        "[Two to three hours in your home]",
+        "[Colour and material advice]",
+        "[A written summary afterwards]"
+      ],
+      "best_for": "[e.g. a renovation or whole-house project]",
+      "fee": "[From £… / on request]",
+      "photo": {
+        "image": "/assets/img/photos/lounge-band.jpg",
+        "alt": "A cork wallcovering sample beside a terracotta paint swatch"
+      }
+    }
+  ],
+  "steps_heading": "How it works",
+  "steps_intro": "[One sentence on what working together feels like.]",
+  "steps": [
+    {
+      "title": "Get in touch",
+      "text": "[Tell me about your home and what you'd like to change.]"
+    },
+    {
+      "title": "A first visit",
+      "text": "[I come to you, see the space and talk through ideas and budget.]"
+    },
+    {
+      "title": "The design",
+      "text": "[Schemes, samples and drawings, refined together.]"
+    },
+    {
+      "title": "Bringing it to life",
+      "text": "[Ordering, trades and the final styling.]"
+    }
+  ],
+  "cta_heading": "Not sure which is right for you?",
+  "cta_text": "[Tell me a little about your project and I'll suggest the best way to work together.]"
+}
