@@ -1,4 +1,4 @@
-# Decap CMS settings for the Studio Mills website (the editor at /admin/).
+# Decap CMS settings for the Mills website (the editor at /admin/).
 backend:
   name: github
   repo: stuartmleach-collab/studio-mills-website
