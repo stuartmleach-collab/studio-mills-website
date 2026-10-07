@@ -10,7 +10,7 @@
     "alt": "Lit candles in cut-glass holders beside a stone basin and brass tap"
   },
   "hero_caption": "Marble, walnut and brushed brass in a family bathroom. [Location]",
-  "intro_headline": "I'm Camilla, and Studio Mills is my interior design studio. I make rooms that feel like the people who live in them, and work beautifully on an ordinary Tuesday.",
+  "intro_headline": "I'm Camilla, and Mills is my interior design studio. I make rooms that feel like the people who live in them, and work beautifully on an ordinary Tuesday.",
   "intro_text": "[Two or three sentences in Camilla's words: where the studio is based, the kind of homes she works on, and what clients can expect from working together.]",
   "band_photo": {
     "image": "/assets/img/photos/home-rug.jpg",
@@ -65,9 +65,9 @@
     }
   ],
   "about_quote": "“Good design should make Tuesday evenings better, not just the photos.”",
-  "about_text": "[A short paragraph introducing Camilla: her background, what she loves, and why she started Studio Mills.]",
+  "about_text": "[A short paragraph introducing Camilla: her background, what she loves, and why she started Mills.]",
   "about_photo": {
     "image": "/assets/img/photos/home-camilla.jpg",
-    "alt": "Camilla, founder of Studio Mills"
+    "alt": "Camilla, founder of Mills"
   }
 }
