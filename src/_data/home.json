@@ -1,29 +1,29 @@
 {
   "about_photo": {
-    "image": "/assets/img/photos/home-camilla.jpg",
+    "image": "/assets/img/photos/about-work.jpg",
     "alt": "Camilla, founder of Mills"
   },
-  "intro_text": "[Two or three sentences in Camilla's words: where the studio is based, the kind of homes she works on, and what clients can expect from working together.]",
+  "intro_text": "Hello, I'm Camilla.\n\nI'm the creative mind behind Mills, my little interior design studio nestled in the Sussex village of Hurstpierpoint.\n\nI have a soft spot for bold colours, unexpected combinations and those little details that make a space feel special. Whether it's a much-loved family home or a business looking for a fresh perspective, I love finding the personality in a place and bringing it to life.\n\nFor me, the best part is getting to know the people behind the project. I'll bring the ideas, creativity and experience, but we'll create something together that feels wonderfully, unmistakably yours.",
   "hero_caption": "A playful balance. Bold pattern meets delicate florals, warm peach tones are lifted by cool powder blue and soft curves sit alongside clean architectural lines.  The statement headboard brings colour, character and a touch of the unexpected, while vintage inspired furniture and carefully chosen details add warmth and individuality.  Playful yet considered, this bedroom is a celebration of contrast, a space designed to spark imagination, feel comforting and grow with the person who calls it their own.",
   "services_heading": "However much help you need.",
-  "intro_headline": "I'm Camilla, and Mills is my interior design studio. I make rooms that feel like the people who live in them, and work beautifully on an ordinary Tuesday.",
+  "intro_headline": "Hello there, make yourself at home.",
   "band_photo": {
-    "image": "/assets/img/photos/home-rug.jpg",
-    "alt": "Close-up of a striped rug in berry, ochre, teal and cream"
+    "image": "/assets/img/photos/lounge-p2.jpg",
+    "alt": "Close up of record player against a cork wall."
   },
-  "about_quote": "“Good design should make Tuesday evenings better, not just the photos.”",
+  "about_quote": "“I believe a space should do more than look beautiful. It should make you feel something. Whether it's the comfort of coming home or the buzz of walking into somewhere extraordinary, that's where the magic of good design really happens.”",
   "hero_photo": {
     "image": "/assets/img/photos/interior-design-kids-bedroom-pink-and-blue.jpg",
     "alt": "Bedroom with bold patterned headboard and blue lamp. "
   },
-  "services_text": "From a single tricky room to a whole house, start to finish.",
+  "services_text": "From a single room in need of a fresh perspective to a complete home or business transformation, I offer creative, considered design tailored to you, from the first spark of an idea to the finishing touches.",
   "hero_text": "A room becomes somewhere you love to spend time. A business becomes somewhere people remember. Through considered design, confident colour and unexpected details, I transform ordinary spaces into places with personality, purpose and a sense of belonging.\n\nBased in Sussex, I create distinctive interiors for homes and businesses that don't just look beautiful, but change the way people feel, live and connect.",
   "hero_small_photo": {
     "image": "/assets/img/photos/final-backup.jpg",
     "alt": "Bedroom with bold patterned headboard"
   },
-  "band_text": "A good home tells you something about the people in it. I'm not afraid of colour, pattern or a rug that starts a conversation, and I always start with how a room needs to work.",
-  "band_heading": "Rooms with something to say.",
+  "band_text": "The best spaces have a little magic about them. That unexpected colour, the perfect mix of old and new, the detail you never knew you needed until you couldn't imagine being without it.\n\nI won't turn up with a signature style or a set of rules. Instead, I'll get to know you, uncover what makes your space special and bring ideas you might never have thought of. Whether it's a home that feels wonderfully you or a business that tells your brand's story and keeps people coming back, expect creative thinking, thoughtful details and a few happy surprises along the way.",
+  "band_heading": "A little unexpected. Entirely yours",
   "project_cards": [
     {
       "project": "sitting-room",
@@ -69,5 +69,5 @@
       "text": "[Short description: a few hours together in your home, and a plan to take away.]"
     }
   ],
-  "about_text": "[A short paragraph introducing Camilla: her background, what she loves, and why she started Mills.]"
+  "about_text": "I'm Camilla, the creative mind behind Mills. Growing up in a creative household in Brighton and with a background in theatre and stage design, I've always been fascinated by how colour, light and unexpected details can completely transform a space. I started Mills to bring that same sense of imagination and storytelling into homes and businesses, creating interiors that feel personal, full of character and a little bit different from the ordinary."
 }
