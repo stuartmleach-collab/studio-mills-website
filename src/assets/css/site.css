@@ -10,8 +10,12 @@ a{color:#000000}a:hover{color:#6c3d2b}
 .nav{display:flex;flex-wrap:wrap;align-items:center;gap:36px;list-style:none;margin:0;padding:0}
 .nav a{text-decoration:none;font-weight:500;font-size:17px}
 .hero{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
-.hero-text{grid-column:1 / span 6;padding-top:32px;position:relative;z-index:2}
-.hero-media{grid-column:7 / span 6;position:relative;margin-right:calc(-1*clamp(20px,4vw,56px))}
+/* Hero: extra space under the nav; the text block's bottom (the buttons) lines up with the
+   bottom of the small photo frame, which hangs 72px below the main frame. */
+.hero-wrap{padding-top:72px}
+.hero-text{grid-column:1 / span 6;grid-row:1;align-self:end;margin-bottom:-72px;position:relative;z-index:2}
+.hero-media{grid-column:7 / span 6;grid-row:1;position:relative;margin-right:calc(-1*clamp(20px,4vw,56px))}
+.hero-cap{grid-column:7 / span 6;grid-row:2}
 .hero-detail{position:absolute;left:-88px;bottom:-72px}
 .split{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;align-items:start}
@@ -56,7 +60,10 @@ section,footer{scroll-margin-top:84px}
 .flip{transform:rotate(180deg)}
 @media (max-width:900px){
  .hero,.split{grid-template-columns:minmax(0,1fr)}
- .hero-text,.hero-media,.split>*{grid-column:1 / -1 !important;margin-top:0 !important}
+ .hero-text,.hero-media,.hero-cap,.split>*{grid-column:1 / -1 !important;margin-top:0 !important}
+ .hero-wrap{padding-top:32px}
+ .hero-text,.hero-media,.hero-cap{grid-row:auto}
+ .hero-text{align-self:start;margin-bottom:0}
  .hero-media{margin-right:0;margin-top:40px !important}
  .hero-detail{left:12px;bottom:-56px}
  .cards,.svc,.jr{grid-template-columns:minmax(0,1fr)}

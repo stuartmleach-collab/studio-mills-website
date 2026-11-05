@@ -5,14 +5,15 @@ section: "home"
 permalink: "/"
 layout: base.njk
 ---
-{% from "icons.njk" import svcIcon %}<section class="wrap" style="padding-bottom:128px">
+{% from "icons.njk" import svcIcon %}<section class="wrap hero-wrap" style="padding-bottom:128px">
 <div class="hero">
 <div class="hero-text">
 <h1 class="hero-h">{{ home.hero_heading }}</h1>
 <p style="font-size:22px;line-height:1.5;max-width:26em;margin:40px 0 0">{{ home.hero_text }}</p>
 <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:36px"><a class="btn btn-clay" href="/contact/">Start a conversation</a><a class="btn btn-line" href="/projects/">See the projects</a></div>
 </div>
-<div class="hero-media" style="margin-top:8px"><div class="fr fr-v5-olive tilt" style="--rot:1deg;--bw0:64px"><div style="height:580px"><img class="cover" src="{{ home.hero_photo.image }}" alt="{{ home.hero_photo.alt }}"></div></div><div class="hero-detail" style="width:240px"><div class="fr fr-v3-clay tilt" style="--rot:-4deg;--bw0:40px"><div style="height:280px"><img class="cover" src="{{ home.hero_small_photo.image }}" alt="{{ home.hero_small_photo.alt }}"></div></div></div><p class="hero-cap" style="margin:16px 0 0 168px;font-size:14px;color:#000000">{{ home.hero_caption }}</p></div>
+<div class="hero-media"><div class="fr fr-v5-olive tilt" style="--rot:1deg;--bw0:64px"><div style="height:580px"><img class="cover" src="{{ home.hero_photo.image }}" alt="{{ home.hero_photo.alt }}"></div></div><div class="hero-detail" style="width:240px"><div class="fr fr-v3-clay tilt" style="--rot:-4deg;--bw0:40px"><div style="height:280px"><img class="cover" src="{{ home.hero_small_photo.image }}" alt="{{ home.hero_small_photo.alt }}"></div></div></div></div>
+<p class="hero-cap" style="margin:16px 0 0 168px;font-size:14px;color:#000000">{{ home.hero_caption }}</p>
 </div>
 </section>
 
