@@ -16,6 +16,9 @@ a{color:#000000}a:hover{color:#6c3d2b}
 .hero-text{grid-column:1 / span 6;grid-row:1;align-self:end;margin-bottom:-72px;position:relative;z-index:2}
 .hero-media{grid-column:7 / span 6;grid-row:1;position:relative;margin-right:calc(-1*clamp(20px,4vw,56px))}
 .hero-cap{grid-column:7 / span 6;grid-row:2}
+/* Keep the intro text and buttons clear of the small photo, which hangs ~88px into the text column */
+.hero-text>p,.hero-text>div{margin-right:112px !important}
+@media (min-width:901px) and (max-width:1199px){.hero-text>p{font-size:18px !important}}
 .hero-detail{position:absolute;left:-88px;bottom:-72px}
 .split{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;align-items:start}
@@ -64,6 +67,7 @@ section,footer{scroll-margin-top:84px}
  .hero-wrap{padding-top:32px}
  .hero-text,.hero-media,.hero-cap{grid-row:auto}
  .hero-text{align-self:start;margin-bottom:0}
+ .hero-text>p,.hero-text>div{margin-right:0 !important}
  .hero-media{margin-right:0;margin-top:40px !important}
  .hero-detail{left:12px;bottom:-56px}
  .cards,.svc,.jr{grid-template-columns:minmax(0,1fr)}
